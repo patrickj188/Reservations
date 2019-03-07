@@ -8,12 +8,10 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
-app.get("/", function (req, res){
+app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'home.html'));
-})
-app.get("/home", function (req, res){
+});
+app.get('/home', function(req, res) {
   res.sendFile(path.join(__dirname, 'home.html'));
 });
 app.get('/tables', function(req, res) {
@@ -25,32 +23,22 @@ app.get('/reserve', function(req, res) {
 
 let people = [];
 
-
-app.post("/api/reserve ", function(req, res) {
+app.post('/api/reserve ', function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   var reserveTabel = req.body;
 
   // Using a RegEx Pattern to remove spaces from newCharacter
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  reserveTabel.routeName = reserveTabel.name.replace(/\s+/g, "").toLowerCase();
+  reserveTabel.routeName = reserveTabel.name.replace(/\s+/g, '').toLowerCase();
 
   console.log(reserveTabel);
 
-people.push(reserveTabel);
+  people.push(reserveTabel);
 
   res.json(reserveTabel);
 });
 
-
-
 app.listen(PORT, function() {
   console.log('App listening on PORT ' + PORT);
 });
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> c7a2cb80194e86308d631e8f6f2bde5622d95459
