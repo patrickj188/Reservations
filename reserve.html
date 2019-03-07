@@ -91,11 +91,12 @@
       </footer>
     </div>
     <script>
-      $('#add-reservation').on('click', function() {
-        let reserveName = '#reserve-name'.val().trim();
-        let reserveEmail = '#reserve-email'.val().trim();
-        let reservePhone = '#reserve-phone'.val().trim();
-        let reserveId = '#reserve-unique-id'.val().trim();
+      $('#add-reservation').on('click', function(event) {
+          event.preventDefault();
+        let reserveName = $('#reserve-name').val().trim();
+        let reserveEmail = $('#reserve-email').val().trim();
+        let reservePhone = $('#reserve-phone').val().trim();
+        let reserveId = $('#reserve-unique-id').val().trim();
 
         let newReservation = {
           id: reserveId,
