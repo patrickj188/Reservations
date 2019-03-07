@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const data = require('./data');
 
 const app = express();
 const PORT = 3000;
@@ -14,17 +15,13 @@ app.get("/", function (req, res){
 })
 app.get("/home", function (req, res){
   res.sendFile(path.join(__dirname, 'home.html'));
-})
-app.get("/tables", function (req, res){
+});
+app.get('/tables', function(req, res) {
   res.sendFile(path.join(__dirname, 'tables.html'));
-})
-app.get("/reservation", function (req, res){
+});
+app.get('/reserve', function(req, res) {
   res.sendFile(path.join(__dirname, 'reserve.html'));
-})
-
-app.get("/waitlist", function (req, res){
-  res.sendFile(path.join(__dirname, 'reserve.html'));
-})
+});
 
 let people = [];
 
@@ -50,7 +47,10 @@ people.push(reserveTabel);
 app.listen(PORT, function() {
   console.log('App listening on PORT ' + PORT);
 });
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> c7a2cb80194e86308d631e8f6f2bde5622d95459

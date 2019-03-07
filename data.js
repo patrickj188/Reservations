@@ -1,3 +1,3 @@
-const exports = (module.exports = {});
-
-exports.reservation = [{ id: 0, name: '', email: '', phone: '' }];
+module.exports = {
+  reservation: [{ id: 0, name: '', email: '', phone: '' }]
+};
