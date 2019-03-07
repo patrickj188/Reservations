@@ -14,7 +14,7 @@ app.get('/reserve', function(req, res) {
   res.sendFile(path.join(__dirname, 'reserve.html'));
 });
 
-app.post('');
+app.post('/');
 
 app.listen(PORT, function() {
   console.log('App listening on PORT ' + PORT);

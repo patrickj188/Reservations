@@ -90,6 +90,30 @@
         </div>
       </footer>
     </div>
-    <script></script>
+    <script>
+      $('#add-reservation').on('click', function() {
+        let reserveName = '#reserve-name'.val().trim();
+        let reserveEmail = '#reserve-email'.val().trim();
+        let reservePhone = '#reserve-phone'.val().trim();
+        let reserveId = '#reserve-unique-id'.val().trim();
+
+        let newReservation = {
+          id: reserveId,
+          name: reserveName,
+          email: reserveEmail,
+          phone: reservePhone
+        };
+
+        // Using a RegEx Pattern to remove spaces from searchedCharacter
+        // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+        // searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+        // QUESTION: What does $.get do? What are the parameters it is expecting?
+        $.post('/api/reserve', newReservation).then(function(data) {
+          console.log(data);
+          alert('Adding reservation...');
+        });
+      });
+    </script>
   </body>
 </html>
